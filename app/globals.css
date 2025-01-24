@@ -4,16 +4,26 @@
 
 
 
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
 
 
 
 
 .dot {
-    height: 20px;
-    width: 20px;
+    height: 15px;
+    width: 15px;
     margin-right: 10px;
     border-radius: 10px;
-    background-color: #b3d4fc;
+    background-color: #39A68A;
     animation: pulse 1.5s infinite ease-in-out;
   }
   
@@ -42,13 +52,13 @@
   
     50% {
       transform: scale(1.2);
-      background-color: #6793fb;
+      background-color: #39A68A;
       box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
     }
   
     100% {
       transform: scale(0.8);
-      background-color: #b3d4fc;
+      background-color: #cddaeb;
       box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
     }
   }
