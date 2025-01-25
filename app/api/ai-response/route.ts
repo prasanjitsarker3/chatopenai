@@ -1,7 +1,8 @@
+"use server"
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 
-export const initialMessage = {
+ const initialMessage = {
   role: "system" as const,
   content: `
   Please format your responses using Markdown. Use **bold**, *italics*, \`code\`, lists, and other markdown elements.`
