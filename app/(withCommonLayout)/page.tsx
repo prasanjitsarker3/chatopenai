@@ -9,7 +9,7 @@ import { useChat } from "@/components/CommonFile/ChatContext";
 import MessageHeader from "@/components/Pages/MessageHeader";
 
 const HomePage = () => {
-  const { messages, addMessage, clearMessages } = useChat();
+  const { messages, addMessage, isSidebarOpen } = useChat();
   const [message, setMessages] = useState<{ text: string; isAI: boolean }[]>(
     []
   );
@@ -49,13 +49,18 @@ const HomePage = () => {
 
   return (
     <div className="bg-[#F5F7FB] dark:bg-slate-900 h-[100vh] ">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-12 h-full p-5 gap-4 ">
-          <div className="col-span-3 rounded-xl space-y-4 h-[81vh]  pt-4">
+      <div className="container mx-auto ">
+        <div className="grid grid-cols-12 h-full p-0 md:p-5 gap-4 ">
+          {/* <div className=" col-span-12 md:col-span-3 rounded-xl space-y-4 h-[81vh]  pt-4"> */}
+          <div
+            className={`fixed top-0 left-0 h-[100vh] md:h-[81vh]   transform transition-transform duration-300 ${
+              isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+            } md:static md:translate-x-0 md:col-span-3 rounded-xl space-y-4 pt-4`}
+          >
             <MessageSidebar />
           </div>
 
-          <div className="col-span-9 h-[90vh] flex flex-col  rounded-b-xl p-4  ">
+          <div className=" col-span-12 md:col-span-9 h-[100vh] md:h-[90vh] flex flex-col  rounded-b-xl p-4  ">
             <div className=" w-full flex justify-end">
               <MessageHeader/>
             </div>

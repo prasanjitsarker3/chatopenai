@@ -1,5 +1,11 @@
-"use client"
-import React, { createContext, useContext, useState, ReactNode, useEffect } from "react";
+"use client";
+import React, {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect,
+} from "react";
 
 interface ChatMessage {
   text: string;
@@ -10,14 +16,18 @@ interface ChatContextProps {
   messages: ChatMessage[];
   addMessage: (message: ChatMessage) => void;
   clearMessages: () => void;
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
 }
 
 const ChatContext = createContext<ChatContextProps | undefined>(undefined);
 const STORAGE_KEY = "chat_messages";
 
-export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ChatProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  console.log("Context Message", messages);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
     const storedMessages = localStorage.getItem(STORAGE_KEY);
@@ -30,7 +40,6 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
   }, [messages]);
 
-
   const addMessage = (message: ChatMessage) => {
     setMessages((prev) => [...prev, message]);
   };
@@ -39,9 +48,20 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setMessages([]);
     localStorage.removeItem(STORAGE_KEY);
   };
+  const toggleSidebar = () => {
+    setSidebarOpen((prev) => !prev);
+  };
 
   return (
-    <ChatContext.Provider value={{ messages, addMessage, clearMessages }}>
+    <ChatContext.Provider
+      value={{
+        messages,
+        addMessage,
+        clearMessages,
+        isSidebarOpen,
+        toggleSidebar,
+      }}
+    >
       {children}
     </ChatContext.Provider>
   );

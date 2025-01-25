@@ -36,12 +36,12 @@ const MessageSendActionInput = ({ onSendMessage }: MessageProps) => {
           value={message}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown} 
-          className="flex-1 py-4 px-4 bg-[#F5F7FB] dark:bg-slate-800 dark:border dark:border-white/20 rounded-full focus:outline-none focus:ring-2 focus:ring-[#39A68A]"
+          className="flex-1 py-2 lg:py-3 xl:py-4 px-4 bg-[#F5F7FB] dark:bg-slate-800 dark:border dark:border-white/20 rounded-full focus:outline-none focus:ring-2 focus:ring-[#39A68A]"
         />
         <button
           onClick={handleMessageSend}
           disabled={!message.trim()}
-          className="h-14 w-14 bg-[#39A68A] rounded-full text-white flex justify-center items-center focus:outline-none  focus:ring-[#39A68A]"
+          className=" h-10 w-10 lg:w-12 lg:h-12 xl:h-14 xl:w-14 bg-[#39A68A] rounded-full text-white flex justify-center items-center focus:outline-none  focus:ring-[#39A68A]"
           aria-label="Type a message..."
         >
           <Send size={18} />
