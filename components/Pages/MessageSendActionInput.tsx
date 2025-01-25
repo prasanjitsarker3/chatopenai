@@ -36,7 +36,7 @@ const MessageSendActionInput = ({ onSendMessage }: MessageProps) => {
           value={message}
           onChange={handleInputChange}
           onKeyDown={handleKeyDown} 
-          className="flex-1 py-4 px-4 bg-[#F5F7FB] dark:bg-slate-800 dark:border dark:border-white rounded-full focus:outline-none focus:ring-2 focus:ring-[#39A68A]"
+          className="flex-1 py-4 px-4 bg-[#F5F7FB] dark:bg-slate-800 dark:border dark:border-white/20 rounded-full focus:outline-none focus:ring-2 focus:ring-[#39A68A]"
         />
         <button
           onClick={handleMessageSend}

@@ -34,7 +34,7 @@ const MessageSidebar = () => {
             userMessages.map((msg, index) => (
               <li
                 key={index}
-                className="px-3 py-1.5 border-b border-gray-200 dark:text-white text-gray-600 hover:text-[#39A68A] cursor-pointer"
+                className="px-3 py-1.5 border-b border-gray-200 dark:border-white/20 dark:text-white text-gray-600 hover:text-[#39A68A] cursor-pointer"
               >
                 {msg.text}
               </li>

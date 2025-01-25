@@ -1,37 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# OpenAI Chat Application:
 
-First, run the development server:
+This application allows users to enter prompts and receive AI-generated responses. It is built using OpenAI's API and implements server-side rendering with Axios. The application manages prompts and responses efficiently, storing them in localStorage to ensure data persistence even when the application is closed. Upon reopening, previously stored data is displayed in the UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Key Features:
+
+Prompt Input and AI Response: Users can send prompts and view AI responses in real time.
+Persistent Storage: Both prompts and AI responses are saved in localStorage, ensuring that the data remains accessible after restarting the application.
+Sidebar for History: Prompts are displayed in a sidebar, allowing users to revisit their conversation history.
+Context Management: Application data is managed using React Context, making it accessible throughout the app for a seamless experience.
+User-Friendly UI: The interface is intuitive, displaying prompts and responses in a chat-like format for easy interaction.
+
+## Installation
+Follow these steps to set up the application with Next.js, TypeScript, Shadcn, Tailwind CSS, and Lucide icons:
+
+1. **Create a new Next.js application with TypeScript**
+
+```js
+ npx create-next-app@latest my-app-name --typescript
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Navigate to your project directory**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```js
+ cd my-app-name
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **Install Tailwind CSS and its dependencies**
 
-## Learn More
+```js
+ npm install -D tailwindcss postcss autoprefixer
+ npx tailwindcss init -p
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Install Shadcn and Lucide Icons**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+  npm install @nextui-org/react
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+5. **Ensure all dependencies are installed**
 
-## Deploy on Vercel
+```js
+  npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# chatopenai
+1. **Start the development server:**
+
+```js
+npm run dev
+```
+
+# Live Link
+
+[Live Application] []
